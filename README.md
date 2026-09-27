@@ -152,6 +152,13 @@ Product and category pages get a **Purge from Trident** button.
 - **ESI in assemble mode:** Trident's `assemble` mode does not carry fragment tags into the assembled page. Use `hole_punch`, or switch the plugin's ESI off with `assemble`.
 - **Duplicate purges:** every stored invalidation also gets a backstop outbox row, due after Shopware's own task. It covers the moment when Shopware has deleted its tags but not yet purged. So each change is purged twice: once by Shopware's task, then about 6 minutes later by the backstop. A duplicate purge is harmless.
 
+## Versioning
+
+Versions follow Trident: this plugin 1.8.x works with Trident 1.8. MAJOR.MINOR moves
+with the engine (every Trident X.Y.0 release is also a release of this package,
+changed or not); the PATCH number is this package's own. The
+admin screens warn when a connected Trident runs another release line.
+
 ## This repository is a mirror
 
 `qoliber/trident-cache-shopware` is developed in the Trident repository together with the
