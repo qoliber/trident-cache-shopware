@@ -1,0 +1,46 @@
+{
+    "name": "qoliber/trident-cache-shopware",
+    "description": "Shopware 6 plugin for the Trident HTTP cache: a reverse-proxy gateway (cache tags, durable purges to every Trident instance), ESI header/footer through Trident, and admin screens over Trident's admin API.",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jakub Winkler",
+            "email": "jwinkler@qoliber.com"
+        }
+    ],
+    "require": {
+        "php": "~8.2.0||~8.3.0||~8.4.0",
+        "shopware/core": "~6.7.0",
+        "shopware/storefront": "~6.7.0",
+        "shopware/administration": "~6.7.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "guzzlehttp/psr7": "^2.4",
+        "qoliber/trident-php": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qoliber\\TridentShopware\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Qoliber\\TridentShopware\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Qoliber\\TridentShopware\\TridentCache",
+        "label": {
+            "de-DE": "Trident Cache",
+            "en-GB": "Trident Cache"
+        },
+        "description": {
+            "de-DE": "Trident HTTP-Cache: Cache-Tags, zuverlässige Invalidierung, ESI und Admin-Ansichten.",
+            "en-GB": "Trident HTTP cache: cache tags, durable purges, ESI and admin screens."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://trident-cache.com",
+            "en-GB": "https://trident-cache.com"
+        }
+    }
+}

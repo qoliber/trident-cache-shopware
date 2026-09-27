@@ -1,0 +1,18 @@
+{
+  "base": "/bundles/tridentcache/administration/",
+  "entryPoints": {
+    "trident-cache": {
+      "css": [],
+      "dynamic": [],
+      "js": [
+        "/bundles/tridentcache/administration/assets/trident-cache.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": ["7.1.0", 7, 1, 0],
+  "viteServer": null
+}

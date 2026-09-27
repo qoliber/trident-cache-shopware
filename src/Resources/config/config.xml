@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Trident connection</title>
+        <title lang="de-DE">Trident-Verbindung</title>
+        <input-field>
+            <name>apiUrl</name>
+            <label>Trident admin API URL</label>
+            <label lang="de-DE">URL der Trident-Admin-API</label>
+            <placeholder>http://127.0.0.1:9301</placeholder>
+            <helpText>One Trident server. Several servers, or per-environment values, belong in the deployment config: the TRIDENT_INSTANCES environment variable takes precedence over this field.</helpText>
+            <helpText lang="de-DE">Ein Trident-Server. Mehrere Server gehören in die Umgebungsvariable TRIDENT_INSTANCES, die Vorrang vor diesem Feld hat.</helpText>
+        </input-field>
+        <input-field type="password">
+            <name>apiToken</name>
+            <label>Trident admin API token</label>
+            <label lang="de-DE">Token der Trident-Admin-API</label>
+            <helpText>The [admin] auth_token of trident.toml, for the URL above. Stored encrypted and bound to that URL: after changing the URL, enter the token again. A TRIDENT_API_TOKEN in the environment is used only for instances from the environment (TRIDENT_INSTANCES / TRIDENT_API_URL), never for this URL.</helpText>
+        </input-field>
+    </card>
+    <card>
+        <title>Caching</title>
+        <title lang="de-DE">Caching</title>
+        <input-field type="single-select">
+            <name>purgeMode</name>
+            <label>Purge mode</label>
+            <label lang="de-DE">Purge-Modus</label>
+            <defaultValue>soft</defaultValue>
+            <helpText>soft: the next visitor still gets the old page while Trident fetches the new one in the background. hard: the entry is removed at once.</helpText>
+            <options>
+                <option><id>soft</id><name>soft</name></option>
+                <option><id>hard</id><name>hard</name></option>
+            </options>
+        </input-field>
+        <input-field>
+            <name>tagPrefix</name>
+            <label>Cache tag prefix</label>
+            <label lang="de-DE">Präfix für Cache-Tags</label>
+            <helpText>Only when several shops share one Trident: a short unique prefix per shop (e.g. shop1_), so a purge or "clear all" never touches another shop.</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>esiEnabled</name>
+            <label>Header and footer as ESI fragments through Trident</label>
+            <label lang="de-DE">Header und Footer als ESI-Fragmente über Trident</label>
+            <defaultValue>true</defaultValue>
+            <helpText>Trident caches the header and footer once each, so a menu change refreshes one fragment instead of every page. Only requests that come from Trident (see below) are served with ESI tags.</helpText>
+        </input-field>
+        <input-field>
+            <name>tridentPeers</name>
+            <label>Addresses Trident connects from</label>
+            <label lang="de-DE">Adressen, von denen Trident verbindet</label>
+            <placeholder>127.0.0.1, ::1</placeholder>
+            <helpText>IP addresses, CIDR ranges or host names, comma separated. Default: this host (127.0.0.1, ::1). Requests from anywhere else are never served ESI tags.</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>debugHeaders</name>
+            <label>Debug header (X-Trident-Decision)</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+    </card>
+</config>

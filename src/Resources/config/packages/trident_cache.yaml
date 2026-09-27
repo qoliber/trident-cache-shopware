@@ -1,0 +1,7 @@
+# Trident is the reverse proxy in front of this shop: Shopware stops caching
+# pages itself and talks to Trident through the plugin's gateway (tags in
+# X-Cache-Tags, durable purges). Deactivating the plugin turns this off again.
+shopware:
+    http_cache:
+        reverse_proxy:
+            enabled: true
