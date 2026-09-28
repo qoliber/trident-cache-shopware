@@ -69,7 +69,7 @@ const SCREENS = [
     { key: 'coverage', title: 'Coverage', actions: [] },
     { key: 'warmer', title: 'Warmer', actions: [
         { action: 'warmer_queue_shop', label: "Warm this shop's pages (home + canonical SEO URLs)", fields: [] },
-        { action: 'warmer_run', label: 'Run the warmer now (its configured sources)', fields: [] },
+        { action: 'warmer_run', label: 'Run the warmer now', fields: [{ key: 'sitemaps', label: 'Sitemap URL(s) on this shop, one per line (.xml or .xml.gz). Empty: the configured sources', type: 'textarea' }] },
         { action: 'warmer_cancel', label: 'Cancel the running warm-up', fields: [] },
         { action: 'warmer_queue', label: 'Warm these URLs', fields: [{ key: 'urls', label: 'URLs or paths on this shop, one per line', type: 'textarea' }] },
     ] },
