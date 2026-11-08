@@ -16,7 +16,7 @@
         "shopware/administration": "~6.7.0",
         "guzzlehttp/guzzle": "^7.5",
         "guzzlehttp/psr7": "^2.4",
-        "qoliber/trident-php": "^1.7"
+        "qoliber/trident-php": "~1.8.2"
     },
     "autoload": {
         "psr-4": {

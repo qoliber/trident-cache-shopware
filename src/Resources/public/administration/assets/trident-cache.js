@@ -74,7 +74,7 @@ const SCREENS = [
         { action: 'warmer_queue', label: 'Warm these URLs', fields: [{ key: 'urls', label: 'URLs or paths on this shop, one per line', type: 'textarea' }] },
     ] },
     { key: 'launch', title: 'Launch mode', actions: [
-        { action: 'launch_start', label: 'Start launch mode', confirm: 'Start launch mode? Visitors get the maintenance page while the cache warms.', fields: [{ key: 'reason', label: 'Reason' }] },
+        { action: 'launch_start', label: 'Start launch mode', confirm: 'Start launch mode? Visitors get the maintenance page while the cache warms.', fields: [{ key: 'urls', label: 'URLs or paths on this shop to warm, one per line', type: 'textarea' }] },
         { action: 'launch_complete', label: 'Complete (go live)', confirm: 'Go live now?', fields: [] },
         { action: 'launch_abort', label: 'Abort', confirm: 'Abort the launch?', fields: [{ key: 'reason', label: 'Reason' }] },
     ] },
